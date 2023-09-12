@@ -1,0 +1,39 @@
+/* .cart { */
+/* margin-top: 20px; */
+/* margin-bottom: 20px; */
+/* padding: 20px;
+    border: 2px solid tomato;
+    border-radius: 16px; */
+/* } */
+
+h2 {
+    color: tomato;
+}
+
+.cartProducts {
+    /* margin: 16px; */
+    margin-bottom: 20px;
+    padding: 16px;
+    border: 2px solid white;
+    border-radius: 16px;
+    display: flex;
+    gap: 20px;
+}
+
+.cartProducts img {
+    height: 200px;
+    width: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+.btnPrimary {
+    background-color: tomato;
+    /* color: white; */
+}
+
+.btnSecondary {
+    border: 1px solid tomato;
+    /* color: white; */
+}
