@@ -15,9 +15,6 @@ const Bottles = () => {
   }, []);
 
   useEffect(() => {
-    // console.log(bottles);
-    // const cartFromLS = getLS();
-    // setCart()
     const idsOfLS = bottles.length && getLS();
     if (idsOfLS) {
       console.log(idsOfLS);
