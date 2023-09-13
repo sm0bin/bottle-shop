@@ -14,25 +14,37 @@ const Bottles = () => {
       .then((data) => setBottles(data));
   }, []);
 
-  //   useEffect(() => {
-  //       const cartFromLS = getLS();
-  //       setCart()
-  //   }, []);
+  useEffect(() => {
+    // console.log(bottles);
+    // const cartFromLS = getLS();
+    // setCart()
+    const idsOfLS = bottles.length && getLS();
+    if (idsOfLS) {
+      console.log(idsOfLS);
+      const cartOfLS = [];
+      for (const id of idsOfLS) {
+        const bottle = bottles.find((bottle) => bottle.id === id);
+        if (bottle) {
+          cartOfLS.push(bottle);
+        }
+      }
+      console.log(cartOfLS);
+      setCart(cartOfLS);
+    }
+  }, [bottles]);
 
   const handleAddToCart = (bottle) => {
     console.log("clicked", bottle);
     const newCart = [...cart, bottle];
     setCart(newCart);
-    const CartItemsId = cart.map((item) => item.id);
-    setLS(CartItemsId);
+    setLS(newCart);
   };
 
   const handleRemoveFromCart = (bottle) => {
     console.log("remove", bottle);
     const restCart = cart.filter((item) => item !== bottle);
     setCart(restCart);
-    const CartItemsId = cart.map((item) => item.id);
-    setLS(CartItemsId);
+    setLS(restCart);
   };
 
   return (

@@ -7,8 +7,9 @@ const getLS = () => {
 }
 
 const setLS = (cart) => {
-    console.log(cart);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    // console.log(cart);
+    const CartItemsId = cart.map((item) => item.id);
+    localStorage.setItem("cart", JSON.stringify(CartItemsId));
 }
 
 // console.log(getLS())
